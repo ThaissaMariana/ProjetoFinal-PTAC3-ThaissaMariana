@@ -283,3 +283,6 @@ export const listaDeMusicas = [
    },
 ];
 
+export async function GET(){
+   return NextResponse.json(listaDeMusicas)
+}
