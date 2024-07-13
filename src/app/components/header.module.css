@@ -1,0 +1,59 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #90906E;
+    padding: 10px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.nomes{
+    display: flex;
+    align-items: center;
+}
+
+.arctic{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+}
+
+.nome1{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    color: #0D0D0D;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.nome{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    color: #0D0D0D;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.name{
+    font-family: 'Arial', sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.name::after{
+    content: "MONKEYS";
+    display: block;
+}
+
+.icon{
+    margin: 0 10px;
+}
