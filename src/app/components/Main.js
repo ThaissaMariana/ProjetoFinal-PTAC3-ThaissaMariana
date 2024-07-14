@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from './main.module.css';
 import Image from "next/image";
+import LoadingIcon from "./LoadingIcon";
 
 export default function Main() {
     const [listMusica, setListMusica] = useState([]);
@@ -16,8 +17,50 @@ export default function Main() {
         getMusica();
     }, []);
     
+    const ordenarAZ = () =>{
+        const newList = [...listMusica].sort( (a,z)=>
+              a.nome.localeCompare(z.nome)
+        );
+        setListMusica(newList);
+       }
     
+       const ordenarZA = () =>{
+        let newList = [...listMusica].sort( (a,z)=>
+              a.nome.localeCompare(z.nome)
+        );
+        newList = newList.reverse();
+        setListMusica(newList);
+       }
+    
+       const ordenarmaiorano = () =>{
+        const newList = [...listMusica].sort( (a,z)=>
+              a.anoLancamento - z.anoLancamento
+        );
+        setListMusica(newList);
+       }
+    
+       const ordermenorano = () =>{
+        let newList = [...listMusica].sort( (a,z)=>
+              a.anoLancamento - z.anoLancamento
+        );
+        newList = newList.reverse();
+        setListMusica(newList);
+       }
+
+       if(listMusica[0] == null){
+        return <LoadingIcon/>
+       }
+    
+     
     return(
+        <>
+        <div>
+            <button className={styles.button} onClick={ordenarAZ}>AZ</button>
+            <button className={styles.button} onClick={ordenarZA}>ZA</button>
+            <button className={styles.button} onClick={ordenarmaiorano}>Álbuns Antigos</button>
+            <button className={styles.button} onClick={ordermenorano}>Álbuns Recentes</button>
+        </div>
+
         <main className={styles.main}>
             <h2 className={styles.h2}>Músicas</h2>
             {listMusica.map((musica) => (
@@ -34,5 +77,6 @@ export default function Main() {
                 </div>
             ))}
         </main>
+        </>
     );
 } 
