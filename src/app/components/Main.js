@@ -54,7 +54,7 @@ export default function Main() {
      
     return(
         <>
-        <div>
+        <div className={styles.tudo}>
             <button className={styles.button} onClick={ordenarAZ}>AZ</button>
             <button className={styles.button} onClick={ordenarZA}>ZA</button>
             <button className={styles.button} onClick={ordenarmaiorano}>Álbuns Antigos</button>
