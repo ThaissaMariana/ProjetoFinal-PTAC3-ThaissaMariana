@@ -16,8 +16,8 @@ export default function Header() {
             <div className={styles.icons}>
                 <Image
                     className={styles.icon}
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                     src={"https://cdn-icons-png.flaticon.com/512/20/20673.png"}
                 />
                 <Image
