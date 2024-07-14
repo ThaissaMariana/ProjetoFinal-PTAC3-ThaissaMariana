@@ -35,4 +35,23 @@
    margin-top: 40px;
    font-size: 29px;
 }
-  
+
+.button{
+    color: black;
+    background-color: #90906E;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    cursor: pointer;
+    padding: 5px 9px;
+    border: 2px;
+    border-radius: 5px;
+    align-self: center;
+    margin-right: 4px;
+    margin-top: 5px;
+    margin-left: 9px;
+    font-weight: bold;
+  }
+
+.tudo{
+    background-color: #1D1D1B;
+  }
