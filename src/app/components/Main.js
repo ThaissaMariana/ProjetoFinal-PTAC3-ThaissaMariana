@@ -1,14 +1,26 @@
-import React from "react";
+'use client'
+import { useEffect, useState } from "react";
 import styles from './main.module.css';
 import Image from "next/image";
-export default async function Main() {
-    const response = await fetch("http://localhost:3000/api");
-    const musicas = await response.json();
+
+export default function Main() {
+    const [listMusica, setListMusica] = useState([]);
+
+    useEffect( ()=> {
+        const getMusica = async () =>{
+            const response = await fetch("http://localhost:3000/api");
+            const musicas = await response.json();
+
+            setListMusica(musicas);
+        }
+        getMusica();
+    }, []);
+    
     
     return(
         <main className={styles.main}>
             <h2 className={styles.h2}>Músicas</h2>
-            {musicas.map((musica) => (
+            {listMusica.map((musica) => (
                 <div className={styles.card} key={musica.id} >
                     <h3>{musica.nome}</h3>
                     <p>{musica.artista}</p>
