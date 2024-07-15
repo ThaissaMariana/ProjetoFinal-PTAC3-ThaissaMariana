@@ -24,24 +24,25 @@
 }
 
 .nome1{
-    font-size: 25px;
+    font-size: 23px;
     font-family: 'Roboto', sans-serif;
     color: #0D0D0D;
-    margin: 0 15px;
+    margin: 0 30px;
     font-weight: bold;
+    margin-left:  45px;
 }
 
 .nome{
-    font-size: 25px;
+    font-size: 23px;
     font-family: 'Roboto', sans-serif;
     color: #0D0D0D;
-    margin: 0 15px;
+    margin: 0 30px;
     font-weight: bold;
 }
 
 .name{
     font-family: 'Arial', sans-serif;
-    font-size: 38px;
+    font-size: 33px;
     font-weight: bold;
     color: #000;
     letter-spacing: 5px;
@@ -56,4 +57,9 @@
 
 .icon{
     margin: 0 10px;
+}
+
+.iconn{
+    margin: 0 10px;
+    margin-right:  50px;
 }
