@@ -23,17 +23,7 @@
     margin: 20px;
     overflow: hidden;
     text-align: center;
-}
-
-.h2{
-   text-align: center;
-   margin-bottom: 20px;
-   width: 100%;
-   text-shadow: 2px 2px 3px #ffffff;
-   color: #FFFFFF;
-   font-family:'Paprika', sans-serif;
-   margin-top: 40px;
-   font-size: 29px;
+    margin-top: 80px;
 }
 
 .button{
@@ -46,8 +36,23 @@
     border: 2px;
     border-radius: 5px;
     align-self: center;
-    margin-right: 4px;
+    margin-right: 1px;
     margin-top: 5px;
+    margin-left: 9px;
+    font-weight: bold;
+  }
+
+.butão{
+    color: black;
+    background-color: #90906E;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    cursor: pointer;
+    padding: 5px 9px;
+    border: 2px;
+    border-radius: 5px;
+    align-self: center;
+    margin-right: 1px;
     margin-left: 9px;
     font-weight: bold;
   }
