@@ -22,32 +22,32 @@ export default function Header() {
                 />
                 <Image
                     className={styles.icon}
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                     src={"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/black-instagram-icon.png"}
                 />
                 <Image
                     className={styles.icon}
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                     src={"https://seeklogo.com/images/T/twitter-logo-1DEF94C339-seeklogo.com.png"}
                 />
                 <Image
                     className={styles.icon}
-                    width={40}
-                    height={40}
+                    width={35}
+                    height={35}
                     src={"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-icon.png"}
                 />
                 <Image
                     className={styles.icon}
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                     src={"https://cdn-icons-png.flaticon.com/512/1384/1384087.png"}
                 />
                 <Image
-                    className={styles.icon}
-                    width={40}
-                    height={40}
+                    className={styles.iconn}
+                    width={30}
+                    height={30}
                     src={"https://cdn-icons-png.flaticon.com/512/152/152756.png"}
                 />
             </div>
