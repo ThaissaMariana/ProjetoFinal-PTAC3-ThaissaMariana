@@ -6,6 +6,8 @@ import LoadingIcon from "./LoadingIcon";
 
 export default function Main() {
     const [listMusica, setListMusica] = useState([]);
+    const [listCompletaMusica, setListCompletaMusica] = useState ([]);
+    const [search, setSearch] = useState ("");
 
     useEffect( ()=> {
         const getMusica = async () =>{
@@ -13,6 +15,7 @@ export default function Main() {
             const musicas = await response.json();
 
             setListMusica(musicas);
+            setListCompletaMusica(musicas);
         }
         getMusica();
     }, []);
@@ -46,6 +49,19 @@ export default function Main() {
         newList = newList.reverse();
         setListMusica(newList);
        }
+         
+       const searchText = (text) => {
+        setSearch(text);
+  
+        if( text.trim() == ""){
+              setListMusica(listCompletaMusica);
+              return
+        }
+        const newList = listMusica.filter((musica) =>
+           musica.nome.toUpperCase().trim().includes(search.toUpperCase().trim()))
+        setListMusica(newList);
+     }
+
 
        if(listMusica[0] == null){
         return <LoadingIcon/>
@@ -55,14 +71,17 @@ export default function Main() {
     return(
         <>
         <div className={styles.tudo}>
-            <button className={styles.button} onClick={ordenarAZ}>AZ</button>
+            <input type="text" value={search} placeholder="Pesquise a música"
+             onChange={(event) => searchText( event.target.value )}/>
+
+            <button className={styles.butão} onClick={ordenarAZ}>AZ</button>
             <button className={styles.button} onClick={ordenarZA}>ZA</button>
             <button className={styles.button} onClick={ordenarmaiorano}>Álbuns Antigos</button>
             <button className={styles.button} onClick={ordermenorano}>Álbuns Recentes</button>
         </div>
 
         <main className={styles.main}>
-            <h2 className={styles.h2}>Músicas</h2>
+            
             {listMusica.map((musica) => (
                 <div className={styles.card} key={musica.id} >
                     <h3>{musica.nome}</h3>
