@@ -3,20 +3,26 @@ import { useEffect, useState } from "react";
 import styles from './main.module.css';
 import Image from "next/image";
 import LoadingIcon from "./LoadingIcon";
+import ErrorGetFetchMusic from "./ErrorGetFetchMusic";
 
 export default function Main() {
     const [listMusica, setListMusica] = useState([]);
     const [listCompletaMusica, setListCompletaMusica] = useState ([]);
     const [search, setSearch] = useState ("");
+    const [errorFetch, setErrorFetch] = useState(false);
 
     useEffect( ()=> {
         const getMusica = async () =>{
+            try{
             const response = await fetch("http://localhost:3000/api");
             const musicas = await response.json();
 
             setListMusica(musicas);
             setListCompletaMusica(musicas);
+        }catch{
+            setErrorFetch(true);
         }
+    }
         getMusica();
     }, []);
     
@@ -62,12 +68,16 @@ export default function Main() {
         setListMusica(newList);
      }
 
-
-       if(listMusica[0] == null){
-        return <LoadingIcon/>
+     if(errorFetch == true){
+        return <ErrorGetFetchMusic/>
+       }
+      
+     if(listMusica[0] == null){
+        return (
+            <LoadingIcon/>
+        ) 
        }
     
-     
     return(
         <>
         <div className={styles.tudo}>
