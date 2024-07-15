@@ -4,6 +4,7 @@ import styles from './main.module.css';
 import Image from "next/image";
 import LoadingIcon from "./LoadingIcon";
 import ErrorGetFetchMusic from "./ErrorGetFetchMusic";
+import Link from "next/link";
 
 export default function Main() {
     const [listMusica, setListMusica] = useState([]);
@@ -103,6 +104,10 @@ export default function Main() {
                     height={250}
                     src={musica.imagem}
                     alt={musica.nome} />
+
+                  <Link href={`/music/${musica.id}`}>
+                    Ver música
+                  </Link>
                 </div>
             ))}
         </main>
