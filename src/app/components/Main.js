@@ -85,8 +85,8 @@ export default function Main() {
             <input type="text" value={search} placeholder="Pesquise a música"
              onChange={(event) => searchText( event.target.value )}/>
 
-            <button className={styles.butão} onClick={ordenarAZ}>AZ</button>
-            <button className={styles.button} onClick={ordenarZA}>ZA</button>
+            <button className={styles.butão} onClick={ordenarAZ}>Ordenar A - Z</button>
+            <button className={styles.button} onClick={ordenarZA}>Ordenar Z - A</button>
             <button className={styles.button} onClick={ordenarmaiorano}>Álbuns Antigos</button>
             <button className={styles.button} onClick={ordermenorano}>Álbuns Recentes</button>
         </div>
@@ -105,7 +105,7 @@ export default function Main() {
                     src={musica.imagem}
                     alt={musica.nome} />
 
-                  <Link href={`/music/${musica.id}`}>
+                  <Link href={`/music/${musica.id}`} className={styles.link}>
                     Ver música
                   </Link>
                 </div>
